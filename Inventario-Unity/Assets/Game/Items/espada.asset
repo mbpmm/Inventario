@@ -12,7 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 993094e47772d4c4d8214c3f0cd0b04f, type: 3}
   m_Name: espada
   m_EditorClassIdentifier: 
+  type: 
+  subType: 
+  slot: {fileID: 0}
   itemName: ejemplo
+  durability: 0
+  weight: 0
   attack: 99
   defense: 99
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 5fd50594014b70e48bd6993443d46b32, type: 3}

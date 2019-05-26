@@ -1,18 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Item : MonoBehaviour
+[System.Serializable]
+[CreateAssetMenu(fileName = "Item", menuName = "Inventario/Item" + "", order = 1)]
+public class Item : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public string type;
+    public string subType;
+    public ItemSlot slot;
+    public string itemName;
+    public float durability;
+    public float weight;
+    public float attack;
+    public float defense;
+    public Sprite image;
 }
+
+
