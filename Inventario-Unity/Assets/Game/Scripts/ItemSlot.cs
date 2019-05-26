@@ -1,18 +1,35 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ItemSlot : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Item _item;
+    public Item item
     {
-        
+        get {return _item; }
+        set
+        {
+            _item = value;
+            if (_item==null)
+            {
+                icon.enabled=false;
+            }
+            else
+            {
+                icon.sprite = _item.image;
+                icon.enabled = true;
+            }
+        }
     }
+    public Image icon;
 
-    // Update is called once per frame
-    void Update()
+    private void OnValidate()
     {
-        
+        if (icon==null)
+        {
+            icon=GetComponent<Image>();
+        }
     }
 }
