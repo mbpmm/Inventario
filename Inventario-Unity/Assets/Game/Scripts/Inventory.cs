@@ -31,4 +31,31 @@ public class Inventory : MonoBehaviour
             slots[i].item = null;
         }
     }
+
+    public bool AddItem(Item item)
+    {
+        if (IsFull())
+        {
+            return false;
+        }
+
+        items.Add(item);
+        RefreshUI();
+        return true;
+    }
+
+    public bool RemoveItem(Item item)
+    {
+        if (items.Remove(item))
+        {
+            RefreshUI();
+            return true;
+        }
+        return false;
+    }
+
+    public bool IsFull()
+    {
+        return items.Count >= slots.Length;
+    }
 }
