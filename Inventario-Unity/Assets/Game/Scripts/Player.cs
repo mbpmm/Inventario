@@ -4,19 +4,22 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public GameObject inv;
     Inventory inventory;
     GameObject canvas;
     private bool openInventory;
-    // Start is called before the first frame update
+    public int level;
+    public float rayDistance;
     void Start()
     {
+        openInventory = false;
+        rayDistance = 200f;
+        inventory = inv.GetComponent<Inventory>();
         canvas = GameObject.Find("Canvas");
     }
 
-    // Update is called once per frame
     void Update()
     {
-
         if (Input.GetKeyDown(KeyCode.I))
         {
             openInventory = !openInventory;
@@ -29,6 +32,32 @@ public class Player : MonoBehaviour
         else
         {
             canvas.SetActive(false);
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Grab();
+        }
+    }
+
+    public void Grab()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, rayDistance))
+        {
+            if (hit.collider.CompareTag("Item"))
+            {
+                if (inventory.AddItem(hit.collider.gameObject.GetComponent<Item>()))
+                {
+                    hit.collider.gameObject.SetActive(false);
+                }
+                else
+                {
+                    Debug.Log("Inventory full");
+                }
+            }
         }
     }
 }

@@ -1,17 +1,18 @@
 ﻿using UnityEngine;
 
 [System.Serializable]
-public class Item
+public class Item : MonoBehaviour
 {
-    public enum type
+    public enum Type
     {
         Weapon,
         Armor,
         Consumable,
         Last
     }
-    public enum subType
+    public enum SubType
     {
+        None,
         Sword,
         Shield,
         Bow,
@@ -24,8 +25,9 @@ public class Item
         Gloves,
         Last
     }
-    //public string type;
-    //public string subType;
+    public Type type;
+    public SubType subType;
+    public GameObject prefab;
     public ItemSlot slot;
     public string itemName;
     public float durability;

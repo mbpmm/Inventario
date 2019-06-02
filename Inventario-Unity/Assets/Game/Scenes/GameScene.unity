@@ -633,6 +633,7 @@ GameObject:
   - component: {fileID: 265742384}
   - component: {fileID: 265742383}
   - component: {fileID: 265742382}
+  - component: {fileID: 265742386}
   m_Layer: 0
   m_Name: ItemGenerator
   m_TagString: Untagged
@@ -705,13 +706,56 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 265742381}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 1.12, z: -3.68}
   m_LocalScale: {x: 1.21, y: 1.21, z: 1.21}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &265742386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265742381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0434a86a873c9714daf77025acbdb6cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 3538688604304781817, guid: 28db63789a4897d4db97f0517857ccff, type: 3}
+  uniqueItem: {fileID: 3538688604304781817, guid: 66971bc1032ca9148b37997efa1ace3b,
+    type: 3}
+  player: {fileID: 983258990}
+  weaponsSprites:
+  - {fileID: 21300000, guid: 5fd50594014b70e48bd6993443d46b32, type: 3}
+  - {fileID: 21300000, guid: 5d7061fc7da05ce44add317708ec7215, type: 3}
+  - {fileID: 21300000, guid: 172774604c1bee84185a69041576525b, type: 3}
+  armorSprites:
+  - {fileID: 21300000, guid: 2f1eaeeaad36ee5469eff7ff158f37ba, type: 3}
+  - {fileID: 21300000, guid: e420c5bc93cb2604695a893500c897e3, type: 3}
+  - {fileID: 21300000, guid: 70a77abda853dd941a0c8debf1de9b04, type: 3}
+  - {fileID: 21300000, guid: 6fc27c9d7fc2d9448af6851bf935e6d2, type: 3}
+  - {fileID: 21300000, guid: d4f5634edede200468fc1ccf30e6f3a1, type: 3}
+  - {fileID: 21300000, guid: fd6e4fc32c78509458fc45ea4a478ba8, type: 3}
+  - {fileID: 21300000, guid: b8fb302c5768e334ca82005f50e58121, type: 3}
+  - {fileID: 21300000, guid: b97c91e8b348f3f4ebdc11f5c82182cd, type: 3}
+  - {fileID: 21300000, guid: f126324fd2486a641842ea5a8244c2d1, type: 3}
+  consumableSprites:
+  - {fileID: 21300000, guid: e52ea25af699fd445b7046374f81a5b9, type: 3}
+  - {fileID: 21300000, guid: 4a39cb4b272639541b7bd5ac0649acf7, type: 3}
+  - {fileID: 21300000, guid: 6592b916f86b19e428db6f6847c7b6dd, type: 3}
+  - {fileID: 21300000, guid: 5d9ba4e7d0964044ea54abe409d81dfd, type: 3}
+  - {fileID: 21300000, guid: ae496f5dad56ea645b72d374a0376368, type: 3}
+  - {fileID: 21300000, guid: db427fab3e94daf4caa704d9314a77a1, type: 3}
+  uniquesList:
+  - {fileID: 11400000, guid: 6169944ea8ed4834785f30e5262825e8, type: 2}
+  - {fileID: 11400000, guid: 4779bb4613417c04b9ea26c0170a2e8b, type: 2}
+  - {fileID: 11400000, guid: 727e4f6e294fd054a9665b53ec775464, type: 2}
+  uniqueChances: 0.2
+  itemsCreatedList: []
 --- !u!1 &279340321
 GameObject:
   m_ObjectHideFlags: 0
@@ -1356,7 +1400,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 914529214}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -1428,6 +1472,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6467d1df080d60d46b9dedc8e2d3c450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inv: {fileID: 1427961126}
+  level: 15
+  rayDistance: 0
 --- !u!4 &983258992
 Transform:
   m_ObjectHideFlags: 0
@@ -1478,7 +1525,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: 0}
+  m_AnchoredPosition: {x: 576, y: 0}
   m_SizeDelta: {x: -1331.4, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1129451400
@@ -1950,21 +1997,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a64b597e079db44581d27241b6c6146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items:
-  - slot: {fileID: 0}
-    itemName: 
-    durability: 0
-    weight: 0
-    attack: 0
-    defense: 0
-    image: {fileID: 0}
-  - slot: {fileID: 0}
-    itemName: 
-    durability: 0
-    weight: 0
-    attack: 0
-    defense: 0
-    image: {fileID: 0}
+  items: []
   itemParent: {fileID: 1151916295}
   slots:
   - {fileID: 914529218}
@@ -2120,7 +2153,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1647742246}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -2324,7 +2357,7 @@ Transform:
   m_GameObject: {fileID: 1676022694}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.29, z: -3.06}
-  m_LocalScale: {x: 3.0657, y: 3.0657, z: 3.0657}
+  m_LocalScale: {x: 13.204583, y: 13.204583, z: 13.204583}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
