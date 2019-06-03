@@ -60,4 +60,22 @@ public class Player : MonoBehaviour
             }
         }
     }
+
+    public void Drop(GameObject item)
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, rayDistance))
+        {
+            if (inventory.RemoveItem(hit.collider.gameObject.GetComponent<Item>()))
+            {
+                Debug.Log("Item removed from inventory successfully");
+            }
+            else
+            {
+                Debug.Log("Your inventory is empty");
+            }
+        }
+    }
 }

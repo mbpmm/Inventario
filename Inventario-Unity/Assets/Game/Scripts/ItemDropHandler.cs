@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemController : MonoBehaviour
+public class ItemDropHandler : MonoBehaviour
 {
-    public ItemGenerator itemGen;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,11 +12,6 @@ public class ItemController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        
-    }
-
-    private void OnMouseDown()
     {
         
     }
